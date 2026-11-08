@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawRay(transform.position, Vector3.down * groundCheckDistance); // Same ray as IsGrounded()
     }
 
+    // Horizontal movement, jump and extra gravity (runs in FixedUpdate)
     private void MovePlayer()
     {
         float horizontalInput = _moveInput.x;                // -1 left, 0 idle, 1 right
