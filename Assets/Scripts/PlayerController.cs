@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _playerRb;                    // Cached Rigidbody for physics movement
     private Vector2 _moveInput;                     // Latest input value (x = left/right)
     private bool _jumpRequested;                    // Set in Update, consumed in FixedUpdate
-
+    private bool _controlEnabled = true;            // False during intro/cutscenes
 
     // Runs once before the first frame: setup
     private void Start()
@@ -36,11 +36,23 @@ public class PlayerController : MonoBehaviour
     // Every frame: read input here
     private void Update()
     {
+        if (!_controlEnabled)                          // Control off: ignore input
+        {
+            _moveInput = Vector2.zero;                 // Stop walking (no stale input)
+            return;                                    // Skip the rest of Update
+        }
+
         _moveInput = moveAction.ReadValue<Vector2>(); // Store input for FixedUpdate
         if (jumpAction.WasPressedThisFrame())         // Key went down this frame, not held
         {
             _jumpRequested = true;                    // Set a flag to jump in FixedUpdate
         }
+    }
+
+    // Lets other scripts turn player input on or off
+    public void SetControlEnabled(bool isEnabled)
+    {
+        _controlEnabled = isEnabled;                         // Store the new state
     }
 
     // Set X velocity from input, keep Y untouched
@@ -52,6 +64,7 @@ public class PlayerController : MonoBehaviour
         _playerRb.linearVelocity = velocity;         // Apply the new velocity
     }
 
+    // Jump once if requested and grounded, then clear the request
     private void HandleJump()
     {
         if (_jumpRequested && IsGrounded()) // Jump requested in Update?
@@ -61,6 +74,7 @@ public class PlayerController : MonoBehaviour
         _jumpRequested = false; // Always clear: midair press is discarded
     }
 
+    // Faster fall, and shorter jump if the key is released early
     private void ApplyJumpGravity()
     {
         if (_playerRb.linearVelocity.y < 0f) // Moving down = falling
@@ -71,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
         else if (_playerRb.linearVelocity.y > 0f && !jumpAction.IsPressed()) // Rising but jump released
         {
-            _playerRb.AddForce(Physics.gravity * (lowJumpMultiplier - 1f), ForceMode.Acceleration); // Cut the short jump
+            _playerRb.AddForce(Physics.gravity * (lowJumpMultiplier - 1f), ForceMode.Acceleration); // Cut the jump short
         }
     }
 
