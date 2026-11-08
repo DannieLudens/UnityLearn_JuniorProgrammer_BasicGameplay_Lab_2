@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Transform target;               // What to follow
-    [SerializeField] private float smoothTime = 0.2f;        // Seconds to catch up (0 = instant)
+    [SerializeField] private float smoothTime = 0.25f;        // Seconds to catch up (0 = instant)
 
     private Vector3 _offset;                                 // Camera position relative to target (player)
     private Vector3 _velocity;                               // Used internally by SmoothDamp
