@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckDistance = 1.1f; // Ray length: half collider height + 0.1
     [SerializeField] private LayerMask groundLayer;          // Only these layers count as ground
     [SerializeField] private float fallMultiplier = 2.5f;    // Gravity multiplier while falling
+    [SerializeField] private float lowJumpMultiplier = 2f;   // Gravity multiplier when jump released early
 
     private Rigidbody _playerRb;                             // Cached Rigidbody for physics movement
     private Vector2 _moveInput;                              // Latest input value (x = left/right)
@@ -41,6 +42,10 @@ public class PlayerController : MonoBehaviour
         if (_playerRb.linearVelocity.y < 0f)                 // Moving down = falling
         {
             _playerRb.AddForce(Physics.gravity * (fallMultiplier - 1f), ForceMode.Acceleration); // Extra gravity while falling
+        }
+        else if (_playerRb.linearVelocity.y > 0f && !jumpAction.IsPressed()) // Rising but jump released
+        {
+            _playerRb.AddForce(Physics.gravity * (lowJumpMultiplier - 1f), ForceMode.Acceleration); // Cut the jump short
         }
     }
 

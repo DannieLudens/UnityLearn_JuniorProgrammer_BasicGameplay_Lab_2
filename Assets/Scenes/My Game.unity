@@ -653,13 +653,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20791169, y: -0, z: -0, w: 0.9781476}
-  m_LocalPosition: {x: 0, y: 5.381038, z: -6}
+  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
+  m_LocalPosition: {x: 0, y: 2.87, z: -6}
   m_LocalScale: {x: 1, y: 1.3358495, z: 1.0524513}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1641426290}
-  m_LocalEulerAnglesHint: {x: 24, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1457,7 +1457,7 @@ GameObject:
   - component: {fileID: 1641426292}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1542,7 +1542,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641426286}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a0bef5a9da44de14e94943437b971277, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1663,8 +1663,8 @@ MonoBehaviour:
     m_Priority: 0
   jumpAction:
     m_Name: Jump
-    m_Type: 0
-    m_ExpectedControlType: 
+    m_Type: 1
+    m_ExpectedControlType: Button
     m_Id: dbc7c5ba-9c6b-4a0b-90fb-eb36c72cead7
     m_Processors: 
     m_Interactions: 
@@ -1680,10 +1680,12 @@ MonoBehaviour:
     m_Flags: 0
     m_Priority: 0
   jumpForce: 7
-  groundCheckDistance: 1.1
+  groundCheckDistance: 0.74
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
 --- !u!54 &1641426293
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1708,7 +1710,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!1660057539 &9223372036854775807
