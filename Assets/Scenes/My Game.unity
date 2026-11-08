@@ -1660,6 +1660,25 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
     m_Priority: 0
+  jumpAction:
+    m_Name: Jump
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: dbc7c5ba-9c6b-4a0b-90fb-eb36c72cead7
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: bd7ff263-cd98-4cf2-84ac-90ef0c90cbf1
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
+  jumpForce: 7
 --- !u!54 &1641426293
 Rigidbody:
   m_ObjectHideFlags: 0
