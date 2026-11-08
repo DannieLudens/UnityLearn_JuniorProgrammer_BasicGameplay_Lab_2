@@ -937,7 +937,7 @@ Transform:
   m_GameObject: {fileID: 648391672}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.39, y: 0.43, z: 0}
+  m_LocalPosition: {x: 11.39, y: 2, z: 0}
   m_LocalScale: {x: 3.622, y: 0.21454746, z: 3.1855}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1210,7 +1210,7 @@ Transform:
   m_GameObject: {fileID: 1243935163}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.04, y: 0.43, z: 0}
+  m_LocalPosition: {x: 6.04, y: 0.5, z: 0}
   m_LocalScale: {x: 3.622, y: 0.21454746, z: 3.1855}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1586,22 +1586,6 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Move
       m_Flags: 4
-    - m_Name: up
-      m_Id: 7037173b-b5d3-4fab-9186-466245d931ba
-      m_Path: <Keyboard>/w
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: down
-      m_Id: ae8f4788-bea6-41e8-a9f4-370246d0d126
-      m_Path: <Keyboard>/s
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
     - m_Name: left
       m_Id: fbc444c5-5558-411c-9ab2-48f90cd44de1
       m_Path: <Keyboard>/a
@@ -1626,22 +1610,6 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Move
       m_Flags: 4
-    - m_Name: up
-      m_Id: 5bdd87eb-1c37-489e-a729-7bed6d0e2e68
-      m_Path: <Keyboard>/upArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: down
-      m_Id: df5950e0-fafa-481a-bfd6-7341b21704b5
-      m_Path: <Keyboard>/downArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
     - m_Name: left
       m_Id: 8d4a9ee8-f83d-4cd6-9b88-38ce1a76ef90
       m_Path: <Keyboard>/leftArrow
