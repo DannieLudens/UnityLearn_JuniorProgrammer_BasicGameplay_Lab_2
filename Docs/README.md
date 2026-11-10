@@ -23,6 +23,7 @@ Guía de estudio de lo aprendido construyendo mi plataformero 2.5D (Unity Learn 
 | 05 | [Code Organization](05-code-organization.md) | Extract Method, nombres honestos, encapsulamiento, guard clauses, advertencias del compilador, gizmos |
 | 06 | [Project Organization](06-project-organization.md) | Carpetas, prefijos, mover assets sin romper referencias |
 | 07 | [Git & Workflow](07-git-and-workflow.md) | Ramas, merges, retomar conversaciones con Claude Code |
+| 08 | [Input Actions Asset](08-input-actions-asset.md) | Acciones inline vs asset central, project-wide actions, `FindAction`, `[FormerlySerializedAs]`, clase C# generada |
 
 ## Próximos temas
 
@@ -30,5 +31,6 @@ Esta es una guía viva: cada tema nuevo se agrega aquí arriba y sale de esta li
 
 - [ ] **Pickups**: triggers, `OnTriggerEnter`, `CompareTag("Player")`, destruir objetos
 - [ ] **Power-up de velocidad**: encapsulamiento, properties (`{ get; private set; }`) y Coroutines para la duración
-- [ ] **`OnEnable` / `OnDisable`** para activar y desactivar las Input Actions
+- [ ] **Movimiento de objetos** (Lab 4): `Translate` + `Time.deltaTime`, `Space.World`, Transform vs Rigidbody kinematic
+- [ ] **Action Maps**: desactivar el mapa `Player` al pausar (con project-wide actions ya no hace falta `Enable()` manual)
 - [ ] **Ordenar los scripts** en `Scripts/Player/` y `Scripts/Camera/`

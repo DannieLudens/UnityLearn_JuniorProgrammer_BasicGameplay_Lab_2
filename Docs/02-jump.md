@@ -21,6 +21,8 @@ jumpAction.Enable();                                     // Input actions start 
 
 **En el Inspector:** ⚙️ → **Action Type = Button** → **+ Add Binding** → `Space [Keyboard]`.
 
+> **Actualización:** después el proyecto pasó al asset central `InputSystem_Actions` (la acción `Player/Jump` ya es Button). Ver [08 · Input Actions Asset](08-input-actions-asset.md). El concepto Button vs Value sigue igual.
+
 **Por qué:**
 - **Value** da un número continuo, como el movimiento: de -1 a 1.
 - **Button** tiene dos estados, presionado o no, que es justo lo que es un salto.

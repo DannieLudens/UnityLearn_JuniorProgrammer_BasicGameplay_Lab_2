@@ -62,4 +62,4 @@ Camera_Cinemachine: ... ── Remove CameraFollow     ← working here (no refa
 
 ---
 
-[← 06 · Project Organization](06-project-organization.md) · [Índice](README.md)
+[← 06 · Project Organization](06-project-organization.md) · [Siguiente: 08 · Input Actions Asset →](08-input-actions-asset.md)

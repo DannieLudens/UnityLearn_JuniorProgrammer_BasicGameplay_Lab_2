@@ -1744,80 +1744,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   speed: 5
-  moveAction:
+  _moveAction:
     m_Name: Move
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: e39e3d50-8577-4fa0-af8f-f32a5fb3f1ad
+    m_Id: f6a629ca-a3f9-4fc9-b3d8-26403a16f521
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 2D Vector WASD
-      m_Id: 6e36d2d5-cb03-4046-b95c-b25b780e6294
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 4
-    - m_Name: left
-      m_Id: fbc444c5-5558-411c-9ab2-48f90cd44de1
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: right
-      m_Id: 33ab41c6-ced5-4a15-83c4-243b5d2e3a69
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: 2D Vector Arrows
-      m_Id: a6286ab3-9676-4ba4-9b26-9f2dceb63ca3
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 4
-    - m_Name: left
-      m_Id: 8d4a9ee8-f83d-4cd6-9b88-38ce1a76ef90
-      m_Path: <Keyboard>/leftArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: right
-      m_Id: b6d8f7df-0121-45a6-81db-232e97a2af93
-      m_Path: <Keyboard>/rightArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
+    m_SingletonActionBindings: []
     m_Flags: 0
     m_Priority: 0
-  jumpAction:
+  _jumpAction:
     m_Name: Jump
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: dbc7c5ba-9c6b-4a0b-90fb-eb36c72cead7
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 4db215a6-c971-4ae9-97db-2581dd3c5bc2
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: bd7ff263-cd98-4cf2-84ac-90ef0c90cbf1
-      m_Path: <Keyboard>/space
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Jump
-      m_Flags: 0
+    m_SingletonActionBindings: []
     m_Flags: 0
     m_Priority: 0
   jumpForce: 7

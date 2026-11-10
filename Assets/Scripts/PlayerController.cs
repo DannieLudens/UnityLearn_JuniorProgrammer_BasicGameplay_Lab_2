@@ -4,14 +4,14 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 5f; // Walk speed in m/s (editable in Inspector)
-    [SerializeField] private InputAction moveAction; // Move input binding (set in Inspector)
-    [SerializeField] private InputAction jumpAction; // Jump input binding (set in Inspector)
     [SerializeField] private float jumpForce = 7f; // Impulse (N·s); with mass 1 = 7 m/s upward
     [SerializeField] private float groundCheckDistance = 1.1f; // Ray length: half collider height + 0.1
     [SerializeField] private LayerMask groundLayer; // Only these layers count as ground
     [SerializeField] private float fallMultiplier = 2.5f; // Gravity multiplier while falling
     [SerializeField] private float lowJumpMultiplier = 2f; // Gravity multiplier when jump released early
 
+    private InputAction _moveAction; // Move input binding (set in Inspector)
+    private InputAction _jumpAction; // Jump input binding (set in Inspector)
     private Rigidbody _playerRb;                    // Cached Rigidbody for physics movement
     private Vector2 _moveInput;                     // Latest input value (x = left/right)
     private bool _jumpRequested;                    // Set in Update, consumed in FixedUpdate
@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _playerRb = GetComponent<Rigidbody>();      // Cache once, not every frame
-        moveAction.Enable();                        // Input actions start disabled
-        jumpAction.Enable();                        // Same for the jump action
+        _moveAction = InputSystem.actions.FindAction("Player/Move");                        // Input actions start disabled
+        _jumpAction = InputSystem.actions.FindAction("Player/Jump");                        // Input actions start disabled
     }
 
     // Physics step: apply movement here
@@ -42,8 +42,8 @@ public class PlayerController : MonoBehaviour
             return;                                    // Skip the rest of Update
         }
 
-        _moveInput = moveAction.ReadValue<Vector2>(); // Store input for FixedUpdate
-        if (jumpAction.WasPressedThisFrame())         // Key went down this frame, not held
+        _moveInput = _moveAction.ReadValue<Vector2>(); // Store input for FixedUpdate
+        if (_jumpAction.WasPressedThisFrame())         // Key went down this frame, not held
         {
             _jumpRequested = true;                    // Set a flag to jump in FixedUpdate
         }
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
                 ForceMode.Acceleration); // Extra gravity while falling
         }
 
-        else if (_playerRb.linearVelocity.y > 0f && !jumpAction.IsPressed()) // Rising but jump released
+        else if (_playerRb.linearVelocity.y > 0f && !_jumpAction.IsPressed()) // Rising but jump released
         {
             _playerRb.AddForce(Physics.gravity * (lowJumpMultiplier - 1f), ForceMode.Acceleration); // Cut the jump short
         }
